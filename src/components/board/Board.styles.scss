@@ -1,0 +1,77 @@
+.board {
+
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-gap: 2px;
+  background-color: #336699; /* Board background color */
+
+
+  .cell {
+    /* Adjust cell width and height based on the board size */
+    flex: 1; /* Make the cell expand and fill available space */
+    height: 40px;
+    background-color: #77aadd; /* Default cell color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: bold;
+
+    @media (max-width: 768px) {
+      /* Styles for screens up to 768px (e.g., mobile) */
+      height: 40px; /* Adjust cell height for mobile */
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+      /* Styles for screens between 769px and 1024px (e.g., tablets) */
+      height: 70px; /* Adjust cell height for tablets */
+    }
+
+    @media (min-width: 1025px) {
+      /* Styles for screens larger than 1024px (e.g., desktop) */
+      height: 60px; /* Adjust cell height for desktop */
+    }
+
+    &.hit {
+      background-color: #ff3333 !important; /* Cell color when hit */
+      color: #fff; /* Text color when hit */
+    }
+
+    &.missed {
+      background-color: #add0ff; /* Cell color when missed */
+      color: #000; /* Text color when missed */
+    }
+  }
+}
+
+.game-over {
+  opacity: 0.2;
+}
+
+.game-over-container {
+  position: absolute;
+  top: 50%;
+  left: calc(50% - 60px);
+  z-index: 1;
+  color: white;
+}
+
+.aircraftCarrier {
+  background-color: #3333ff; /* Aircraft Carrier color */
+}
+
+.battleship {
+  background-color: #ff9900; /* Battleship color */
+}
+
+.cruiser {
+  background-color: #33cc33; /* Cruiser color */
+}
+
+.submarine {
+  background-color: #ffcc00; /* Submarine color */
+}
+
+.destroyer {
+  background-color: #ff6666; /* Destroyer color */
+}
